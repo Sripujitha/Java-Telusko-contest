@@ -1,0 +1,29 @@
+import java.util.*;
+public class pascaltriangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("enter no.of rows");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();  // taking input how many rows that we want to print
+		int spaces=n;   //intializing it to the number of lines
+
+		int num=1;
+		for(int i=0;i<n;i++) {
+			for(int s=1;s<=spaces;s++) { //this for loop is for spaces
+				System.out.print(" ");
+			}
+			num=1;  //as pascal triangle starts with 1 and ends with 1 we need to re-intialize num to 1 else if the num is incremented it is not intialized to one 
+			for(int j=0;j<=i;j++) { //this loop will check how many times you are printing a number
+				System.out.print(num+" ");
+				num=num*(i-j)/(j+1);
+			}
+			spaces--;
+			System.out.println();
+		}
+		
+		
+
+	}
+
+}
